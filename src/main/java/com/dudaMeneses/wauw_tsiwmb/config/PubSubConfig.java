@@ -8,13 +8,14 @@ import com.google.cloud.spring.pubsub.integration.AckMode;
 import com.google.cloud.spring.pubsub.integration.inbound.PubSubInboundChannelAdapter;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.event.EventListener;
 import org.springframework.integration.channel.PublishSubscribeChannel;
 import org.springframework.messaging.MessageChannel;
 
 @Configuration
+@ConditionalOnProperty(value = "spring.cloud.gcp.pubsub.enabled", havingValue = "true", matchIfMissing = true)
 public class PubSubConfig {
 
     @Bean

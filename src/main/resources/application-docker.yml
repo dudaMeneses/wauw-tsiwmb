@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        boot:
+          allow_jdbc_metadata_access: true
+        ddl-auto: validate
+  sql:
+    init:
+      mode: embedded
+  cloud:
+    gcp:
+      pubsub:
+        enabled: true
