@@ -77,7 +77,11 @@
 							<BP_JVM_VERSION>21</BP_JVM_VERSION>
 							<BP_JVM_CDS_ENABLED>true</BP_JVM_CDS_ENABLED>
 							<BP_SPRING_AOT_ENABLED>true</BP_SPRING_AOT_ENABLED>
+							<GOOGLE_APPLICATION_CREDENTIALS>/docker/service-account.json</GOOGLE_APPLICATION_CREDENTIALS>
 						</env>
+						<bindings>
+							<binding>${basedir}/docker/service-account.json:/docker/service-account.json:ro</binding>
+						</bindings>
 						<buildpacks>
 							<buildpack>paketobuildpacks/java</buildpack>
 						</buildpacks>
