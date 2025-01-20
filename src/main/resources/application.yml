@@ -13,3 +13,6 @@ spring:
       pubsub:
         emulator-host: localhost:8085
         project-id: test-project
+  threads:
+    virtual:
+      enabled: true
