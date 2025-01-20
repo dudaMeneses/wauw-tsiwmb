@@ -15,7 +15,7 @@ import org.springframework.integration.channel.PublishSubscribeChannel;
 import org.springframework.messaging.MessageChannel;
 
 @Configuration
-@ConditionalOnProperty(value = "spring.cloud.gcp.pubsub.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(value = "spring.cloud.gcp.pubsub.enabled", havingValue = "true")
 public class PubSubConfig {
 
     @Bean
@@ -32,11 +32,6 @@ public class PubSubConfig {
         adapter.setAckMode(AckMode.MANUAL);
         adapter.setPayloadType(String.class);
         return adapter;
-    }
-
-    @Bean
-    public CredentialsProvider credentialsProvider() {
-        return NoCredentialsProvider.create();
     }
 
     @Bean
